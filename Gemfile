@@ -14,7 +14,9 @@ gem 'pg'
 
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'rspec-rails'
+  gem 'capybara'
   gem 'better_errors'
   gem 'quiet_assets'
   gem 'rails_layout'
@@ -23,8 +25,4 @@ end
 group :production do
   gem 'rails_12factor'
   gem 'thin'
-end
-
-group :test do
-  gem 'capybara'
 end
