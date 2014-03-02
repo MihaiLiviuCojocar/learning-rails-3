@@ -60,5 +60,10 @@ describe "Static Pages" do
 
   end
 
+  it "should have the right links on the layout" do
+    visit root_path
+    click_link "About"
+    expect(page.title).to eq("#{base_title} | About Us")
+  end
 
 end
