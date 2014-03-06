@@ -1,6 +1,7 @@
 LearnRails3::Application.routes.draw do
 
-  get "users/new"
+  resources :users
+
   root to: 'static_pages#home'
 
   get '/help',    to: 'static_pages#help'
@@ -8,5 +9,6 @@ LearnRails3::Application.routes.draw do
   get '/contact', to: 'static_pages#contact'
 
   get '/signup',  to: 'users#new'
+
 
 end

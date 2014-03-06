@@ -16,7 +16,6 @@ gem 'pg'
 
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'better_errors'
@@ -26,6 +25,10 @@ end
 
 group :development do
   gem 'annotate', '2.5.0'
+end
+
+group :test do
+  gem 'factory_girl_rails', '4.1.0'
 end
 
 group :production do
