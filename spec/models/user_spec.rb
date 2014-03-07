@@ -23,13 +23,23 @@ describe User do
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
   it { should respond_to(:authenticate) }
+  it { should respond_to(:remember_token) }
 
   it { should be_valid }
 
+  it "should remember token" do
+    @user.save
+    expect(@user.remember_token).not_to be_blank
+  end
 
-  describe "when name is not present" do
-    before {@user.name = ""}
-    it { should_not be_valid }
+  # describe "remember token" do
+  #   before { @user.save }
+  #   its(:remember_token) { should_not be_blank}
+  # end
+
+  it "when name is not present" do
+    @user.name = ""
+    expect(@user).not_to be_valid
   end
 
   describe "when email is not present" do
@@ -109,4 +119,10 @@ describe User do
     it { should be_invalid }
   end
 
+
 end
+
+
+
+
+
