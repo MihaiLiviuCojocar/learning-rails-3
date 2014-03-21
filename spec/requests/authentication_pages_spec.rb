@@ -45,11 +45,13 @@ describe "AuthenticationPages" do
         visit '/signin'
         fill_in "Email",    with: user.email.upcase
         fill_in "Password", with: user.password
+        click_button "Sign in"
       end
 
       it { should have_link("Sign out") }
       it { should have_link("Profile") }
       it { should_not have_link("Sign in") }
+      it { should have_link("Settings") }
 
       context "followed by sign out" do
 
